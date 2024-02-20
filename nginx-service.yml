@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: nginx-server-service
+    namespace: nginx
+    labels:
+        app: nginx-server
+        type: back-end
+spec:
+  type: ClusterIP
+  ports:
+    - targetPort: 80
+      port: 80
+  selector:
+    app: nginx-server
+    type: back-end
